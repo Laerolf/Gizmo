@@ -1,0 +1,23 @@
+{
+  "name": "gizmania",
+  "version": "0.0.1",
+  "description": "Gizmo, the question cat.",
+  "main": "gizmo.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laerolf/Gizmo.git"
+  },
+  "author": "Nicolas Floréal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laerolf/Gizmo/issues"
+  },
+  "homepage": "https://github.com/laerolf/Gizmo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "client-sessions": "^0.8.0",
+    "express": "^4.16.3",
+    "nano": "^6.4.4",
+    "pug": "^2.0.3"
+  }
+}
