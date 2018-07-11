@@ -1,0 +1,109 @@
+doctype html
+html(lang='en')
+
+  head
+  title Gizmania | Make a Giz
+  meta(name='author', content='Nicolas Floréal')
+  meta(charset='UTF-8')
+  link(href='assets/images/icons/gizmoLogo.ico', rel='icon', type='image/ico')
+  link(href='assets/lib/fontawesome/svg-with-js/css/fa-svg-with-js.css', rel='stylesheet')
+  link(href='assets/lib/bootstrap-4.1.1/dist/css/bootstrap-reboot.min.css', rel='stylesheet')
+  link(href='assets/lib/bootstrap-4.1.1/dist/css/bootstrap.min.css', rel='stylesheet')
+  link(href='assets/css/screen.css', rel='stylesheet')
+  
+  body
+  
+  nav(class='navbar navbar-expand-lg navbar-light bg-info')
+
+    a(class='navbar-brand', href='/') <img src='assets/images/gizmoLogo.svg' width="30" height="30" alt='Gizmo, the cat.' title='Gizmo, the cat.'> Gizmania
+    
+    div(class='collapse navbar-collapse', id='main-navbar')
+      ul(class='navbar-nav mr-auto mt-2 mt-lg-0')
+        li(class='nav-item')
+          a(href='/login', class='nav-link') Login
+        li(class='nav-item')
+          a(href='/register', class='nav-link') Register
+        li(class='nav-item')
+          a(href='/gizes', class='nav-link') Gizes
+
+  div(id='main', class='container-fluid')
+    div(class='row justify-content-center')
+      
+        div(class='card col-6 text-white bg-secondary')
+          div(class='card-header') MAKE A GIZ
+          
+          form(action='/addAGiz', method='post')
+            
+            div(class='card-body')
+            
+              h5(class='card-title') General Giz information
+
+              div(class='input-group mb-3')
+                div(class='input-group-prepend')
+                  span(class='input-group-text', id='giz-name') Giz name
+                input(type='text', class='form-control', aria-label='giz-name', aria-describedby='giz-name', name='giz-name', required)
+                  
+              div(class='input-group mb-3')
+                div(class='input-group-prepend')
+                  span(class='input-group-text') Giz description
+                textarea(class='form-control', aria-label="Giz description", name='giz-description', rows="8")
+              
+              div(class='input-group mb-3')
+                div(class='input-group-prepend')
+                  span(class='input-group-text', id='giz-category') Giz category
+                input(type='text', class='form-control', aria-label='giz-category', aria-describedby='giz-category', name='giz-category', required)
+                  
+              div(class='input-group mb-3')
+                div(class='input-group-prepend')
+                  label(class="input-group-text", for='giz-limitTime') Limit time?
+                select(class='custom-select', id='giz-limitTime', name='giz-limitTime', required)
+                  option(value='no',selected) No
+                  option(value='yes') Yes
+              
+              div(class='input-group mb-3' id='giz-timeLimit-form')
+                div(class='input-group-prepend')
+                  span(class='input-group-text', id='giz-timeLimit') Giz time limit
+                input(type='number', class='form-control', aria-label='giz-timeLimit', aria-describedby='giz-timeLimit', name='giz-timeLimit', min='1', value='1',required)
+                div(class='input-group-append')
+                  span(class='input-group-text') minutes
+            
+            div(class='card-body')
+              
+              h5(class='card-title') The Giz questions
+              
+              div(id='questions')
+                
+                h6(class='card-title') Question 1
+              
+                div(class='input-group mb-3')
+                  div(class='input-group-prepend')
+                    span(class='input-group-text', id='giz-question-1-name') Question
+                  input(type='text', class='form-control', aria-label='giz-question-1-name', aria-describedby='giz-question-1-name', name='giz-question-1-name', required)
+              
+                div(class='input-group mb-3')
+                  div(class='input-group-prepend')
+                    label(class="input-group-text", for='giz-question-1-type') Question type
+                  select(class='custom-select giz-question-type', id='giz-question-1-type', name='giz-question-1-type', required)
+                    option(value='openQuestion',selected) Open question
+                    option(value='multipleChoice') Multiple choice
+              
+                div(class='answers', id='question-1')
+                
+                div(class='input-group mb-3')
+                  div(class='input-group-prepend')
+                    span(class='input-group-text', id='giz-question-1-answer-1') Answer 1
+                  input(type='text', class='form-control', aria-label='giz-question-1-answer-1', aria-describedby='giz-question-1-answer-1', name='giz-question-1-answer-1', required)
+            
+            div(class='card-body')
+              
+              button(class='btn btn-success', id='giz-addAQuestionBtn') + Add another question
+              
+            div(class='card-footer')
+              input(type='submit', value='Complete Giz', name='giz-complete', class='btn btn-success')
+                  
+  script(src="./assets/lib/jquery-3.3.1.min.js")
+  script(src="./assets/lib/bootstrap-4.1.1/dist/js/bootstrap.min.js")
+  
+  script(src="./assets/js/controllers/makeAGizController.js")
+    
+    

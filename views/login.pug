@@ -1,0 +1,48 @@
+doctype html
+html(lang='en')
+
+  head
+  title Gizmania | Login
+  meta(name='author', content='Nicolas Floréal')
+  meta(charset='UTF-8')
+  link(href='assets/images/icons/gizmoLogo.ico', rel='icon', type='image/ico')
+  link(href='assets/lib/fontawesome/svg-with-js/css/fa-svg-with-js.css', rel='stylesheet')
+  link(href='assets/lib/bootstrap-4.1.1/dist/css/bootstrap-reboot.min.css', rel='stylesheet')
+  link(href='assets/lib/bootstrap-4.1.1/dist/css/bootstrap.min.css', rel='stylesheet')
+  link(href='assets/css/screen.css', rel='stylesheet')
+  
+  body
+  
+  nav(class='navbar navbar-expand-lg navbar-light bg-info')
+
+    a(class='navbar-brand', href='/') <img src='assets/images/gizmoLogo.svg' width="30" height="30" alt='Gizmo, the cat.' title='Gizmo, the cat.'> Gizmania
+
+  div(id='main', class='container-fluid')
+    div(class='row justify-content-center')
+      
+        div(class='card col-6 text-white bg-secondary')
+          div(class='card-header') Login
+          div(class='card-body')
+            
+            form(action='/login', method='post')
+              div(class='input-group mb-3')
+                div(class='input-group-prepend')
+                  span(class='input-group-text', id='username') Username
+                input(type='text', class='form-control', aria-label='Username', aria-describedby='username', required)
+              
+              div(class='input-group mb-3')
+                div(class='input-group-prepend')
+                  span(class='input-group-text', id='password') Password
+                input(type='password', class='form-control', aria-label='password', aria-describedby='password', required)
+                  
+              input(type='submit', class='form-control col-2', value='Login')
+              
+          div(class='card-footer')
+            a(href='/register') Not registered yet? Make an account here!
+
+  script(src="./assets/lib/jquery-3.3.1.min.js")
+  script(src="./assets/lib/bootstrap-4.1.1/dist/js/bootstrap.min.js")
+  
+  script(src="./assets/js/controllers/mainController.js")
+    
+    

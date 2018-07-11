@@ -2,7 +2,7 @@ doctype html
 html(lang='en')
 
   head
-  title Gizmania | The Question Cat
+  title Gizmania | Gizes
   meta(name='author', content='Nicolas Floréal')
   meta(charset='UTF-8')
   link(href='assets/images/icons/gizmoLogo.ico', rel='icon', type='image/ico')
@@ -32,12 +32,33 @@ html(lang='en')
   div(id='main', class='container-fluid')
     div(class='row')
       div(class='col')
-        h1 Welcome to Gizmania
-        p This is a place where you can make a quiz that we would like to call a "Giz".
+        h1 Gizes
+        p Here you find all gizes available of other people. Feel free to make your own too!
+        
+        table(class='table table-hover')
+          thead
+            tr
+              th(scope='col') Name
+              th(scope='col') Author
+              th(scope='col') Category
+              th(scope='col') Times completed
+              th(scope='col') Rating
+          tbody
+            tr
+              for giz in gizes
+                td=giz.name
+                td=giz.author
+                td=giz.category
+                td=giz.timesCompleted
+                td=giz.rating
+                
+              else
+                td(colspan='5') There are no Gizes available yet.
+                
+        a(class='btn btn-danger', href='/makeAGiz') Make a Giz!
 
   script(src="./assets/lib/jquery-3.3.1.min.js")
   script(src="./assets/lib/bootstrap-4.1.1/dist/js/bootstrap.min.js")
   
   script(src="./assets/js/controllers/mainController.js")
-    
     

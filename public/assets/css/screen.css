@@ -1,36 +1,8 @@
-.tableTitle {
-  margin: 0 0 1% 1%;
+.card {
+  padding: 0;
+  margin-top: 2%;
 }
 
-.tableExtras {
-  margin: 2% 0;
-}
-
-.tableExtras > button{
-  margin-right: 2%;
-}
-
-.tableExtras > button:last-child{
-  margin-right: 0;
-}
-
-td {
-  vertical-align: middle!important;
-}
-
-#main {
-  padding: 2% 4%;
-}
-
-.searchbox {
-  margin: 2% auto;
-  width: 50%;
-}
-
-.searchbox::placeholder {
-  font-style: italic;
-}
-
-.searchbox .input-group-text {
-  background-color: white!important;
+textarea {
+  resize: none;
 }

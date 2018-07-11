@@ -128,9 +128,9 @@ app.post("/register", (request, response) => {
 
   const registrationDate = new Date().toJSON();
 
-  const newUser = new User(userData.emailAddress, userData.password, registrationDate);
+  //const newUser = new User(userData.emailAddress, userData.password, registrationDate);
 
-  userDB.insert(newUser.toJSON(), function(error, user) {
+  /*userDB.insert(newUser.toJSON(), function(error, user) {
     "use strict";
 
     if (error) {
@@ -153,11 +153,11 @@ app.post("/register", (request, response) => {
        }
 
 
-       })*/
+       })
 
 
     }
-  });
+  });*/
 
 });
 
@@ -402,11 +402,19 @@ app.get("/getActiveUser", (request, response) => {
 });
 
 app.get("/register", (request, response) => {
-  response.sendFile(__dirname + "/web/register.html");
+  response.render('register');
 });
 
 app.get("/login", (request, response) => {
-  response.sendFile(__dirname + "/web/login.html");
+  response.render("login");
+});
+
+app.get("/gizes", (request, response) => {
+  response.render("gizes", {gizes: {}});
+});
+
+app.get("/makeAGiz", (request, response) => {
+  response.render("makeAGiz");
 });
 
 //SETTINGS
