@@ -50,4 +50,22 @@ function Giz(id, name, description, category, timeLimited, timeLimit) {
     this.question.splice(questionNr - 1, 1);
   }
 
+  this.gizQuestionToHTML = function() {
+
+    let gizQuestionsHTML = "";
+
+    if (this.getQuestions().length === 0) {
+
+      this.addAnotherQuestion(new Question(1));
+    }
+
+    this.getQuestions().forEach(function(question) {
+
+      gizQuestionsHTML += question.toHTML();
+
+    })
+
+    return gizQuestionsHTML;
+  }
+
 }

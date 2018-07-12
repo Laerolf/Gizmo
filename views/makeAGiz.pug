@@ -73,27 +73,6 @@ html(lang='en')
               
               div(id='questions')
                 
-                h6(class='card-title') Question 1
-              
-                div(class='input-group mb-3')
-                  div(class='input-group-prepend')
-                    span(class='input-group-text', id='giz-question-1-name') Question
-                  input(type='text', class='form-control', aria-label='giz-question-1-name', aria-describedby='giz-question-1-name', name='giz-question-1-name', required)
-              
-                div(class='input-group mb-3')
-                  div(class='input-group-prepend')
-                    label(class="input-group-text", for='giz-question-1-type') Question type
-                  select(class='custom-select giz-question-type', id='giz-question-1-type', name='giz-question-1-type', required)
-                    option(value='openQuestion',selected) Open question
-                    option(value='multipleChoice') Multiple choice
-              
-                div(class='answers', id='question-1')
-                
-                div(class='input-group mb-3')
-                  div(class='input-group-prepend')
-                    span(class='input-group-text', id='giz-question-1-answer-1') Answer 1
-                  input(type='text', class='form-control', aria-label='giz-question-1-answer-1', aria-describedby='giz-question-1-answer-1', name='giz-question-1-answer-1', required)
-            
             div(class='card-body')
               
               button(class='btn btn-success', id='giz-addAQuestionBtn') + Add another question
@@ -103,6 +82,10 @@ html(lang='en')
                   
   script(src="./assets/lib/jquery-3.3.1.min.js")
   script(src="./assets/lib/bootstrap-4.1.1/dist/js/bootstrap.min.js")
+  
+  script(src="./assets/js/model/giz.js")
+  script(src="./assets/js/model/question.js")
+  script(src="./assets/js/model/answer.js")
   
   script(src="./assets/js/controllers/makeAGizController.js")
     
