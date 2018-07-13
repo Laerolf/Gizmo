@@ -47,7 +47,7 @@ function Giz(id, name, description, category, timeLimited, timeLimit) {
   }
 
   this.removeQuestionByNumber = function(questionNr) {
-    this.question.splice(questionNr - 1, 1);
+    this.questions.splice(questionNr - 1, 1);
   }
 
   this.gizQuestionToHTML = function() {

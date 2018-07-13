@@ -6,3 +6,24 @@
 textarea {
   resize: none;
 }
+
+.multipleChoiceAnswers, .addAnswerBtn {
+  display: none;
+}
+
+.multipleChoiceAnswers {
+  margin-bottom: 2%;
+}
+
+input[type=checkbox] {
+  margin-left: 2%;
+  vertical-align: middle;
+}
+
+.card-footer button {
+  margin-right: 2%;
+}
+
+.card-footer button:last-child{
+  margin-right: 0;
+}

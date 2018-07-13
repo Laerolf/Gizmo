@@ -34,13 +34,17 @@ function Question(questionNr, question, questionType) {
   }
 
   this.toHTML = function() {
-    let questionHTML = "<h6 class='card-title'>Question " + this.getQuestionNr() + "</h6>";
+
+    let questionHTML = "<div class='card text-dark' id='giz-question-"+this.getQuestionNr()+"'>"
+    questionHTML += "<div class='card-header'>Question " + this.getQuestionNr() + "</div>";
+
+    questionHTML += "<div class='card-body'>"
 
     questionHTML += "<div class='input-group mb-3'>";
     questionHTML += "<div class='input-group-prepend'>";
-    questionHTML += "<span class='input-group-text' id='giz-question-" + this.getQuestionNr() + "-name'>Question</span>";
+    questionHTML += "<span class='input-group-text'>Question</span>";
     questionHTML += "</div>";
-    questionHTML += "<input type='text' class='form-control' aria-label='giz-question-" + this.getQuestionNr() + "-name' aria-describedby='giz-question-" + this.getQuestionNr() + "-name' name='giz-question-" + this.getQuestionNr() + "-name' required/>";
+    questionHTML += "<input type='text' class='form-control' id='giz-question-" + this.getQuestionNr() + "-name' aria-label='giz-question-" + this.getQuestionNr() + "-name' aria-describedby='giz-question-" + this.getQuestionNr() + "-name' name='giz-question-" + this.getQuestionNr() + "-name' required/>";
     questionHTML += "</div>";
 
     questionHTML += "<div class='input-group mb-3'>";
@@ -52,7 +56,7 @@ function Question(questionNr, question, questionType) {
     questionHTML += "<option value='multipleChoice'>Multiple choice</option>";
     questionHTML += "</select></div>";
 
-    questionHTML += "<div class='multipleChoiceAnswers' id='question-" + this.getQuestionNr() + "'>";
+    questionHTML += "<div class='multipleChoiceAnswers' id='question-" + this.getQuestionNr() + "-answers'>";
     questionHTML += "<h6 class='card-title'>Possible answers</h6>";
 
     if (this.getAnswers().length === 0) {
@@ -69,7 +73,13 @@ function Question(questionNr, question, questionType) {
 
     questionHTML += "<button class='btn btn-success addAnswerBtn' id='giz-question-" + this.getQuestionNr() + "-addAnswer'>Add answer</button>";
 
+    questionHTML += "</div><div class='card-footer'>";
+
     questionHTML += "<button class='btn btn-success saveQuestionBtn' id='giz-question-" + this.getQuestionNr() + "-save'>Save question</button>";
+
+    questionHTML += "<button class='btn btn-danger removeQuestionBtn' id='giz-question-" + this.getQuestionNr() + "-remove'>Remove question</button>";
+
+    questionHTML += "</div></div>";
 
     return questionHTML;
   }
